@@ -1,0 +1,5 @@
+FastAPI
+uvicorn
+SQLAlchemy
+pydantic
+email-validator
