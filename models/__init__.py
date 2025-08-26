@@ -1,3 +1,3 @@
-from .guest import Guest
+from .customer import Customer
 from .reservation import Reservations
 from .audit import AuditLog

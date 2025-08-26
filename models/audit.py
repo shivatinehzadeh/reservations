@@ -12,14 +12,14 @@ class AuditLog(Base):
     event_type = Column(String, nullable=False)
     reservation_id = Column(Integer, ForeignKey("reservations.reservation_id"))
     created_at = Column(DateTime,nullable=False)
-    payload = Column(JSON, nullable=False)
+    status = Column(String, nullable=False)
     reservation = relationship("Reservations", back_populates="audit")
     
 class AuditLogCreate(BaseModel):
     event_type: str
     reservation_id: int
     created_at: datetime
-    payload: dict
+    status: str
 
 class AuditLogRead(AuditLogCreate):
     id: int

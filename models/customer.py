@@ -3,22 +3,22 @@ from sqlalchemy.orm import relationship
 from database import Base
 from pydantic import BaseModel,EmailStr
 
-class Guest(Base):
-    __tablename__ = "guests"
+class Customer(Base):
+    __tablename__ = "customers"
 
     id = Column(Integer, primary_key=True, index=True)
     first_name = Column(String, nullable=False)
     last_name = Column(String, nullable=False)
     email = Column(String, unique=True, index=True)
-    reservation = relationship("Reservation", back_populates="guest")
+    reservation = relationship("Reservation", back_populates="customer")
     
     
-class GuestCreate(BaseModel):
+class CustomerCreate(BaseModel):
     first_name: str
     last_name: str
     email: EmailStr
 
-class GuestRead(GuestCreate):
+class CustomerRead(CustomerCreate):
     id: int
 
     model_config = {

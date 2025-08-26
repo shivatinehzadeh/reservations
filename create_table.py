@@ -1,5 +1,5 @@
 from database import Base, engine
-from models import Guest, Reservations, AuditLog   
+from models import customer, Reservations, AuditLog   
 from logger import get_logger
 
 logger = get_logger("create_table", "create_table.log")
