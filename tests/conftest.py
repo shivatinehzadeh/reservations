@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 
 from setup.base import app
-from setup.database import Base, get_db
+from setup.database_setup import Base, get_db
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///:memory:"
 

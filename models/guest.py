@@ -4,7 +4,7 @@ from pydantic import BaseModel, EmailStr, StringConstraints
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
-from setup.database import Base
+from setup.database_setup import Base
 
 
 class Guests(Base):

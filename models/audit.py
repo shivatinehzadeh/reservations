@@ -4,7 +4,7 @@ from typing import Annotated
 from pydantic import BaseModel, StringConstraints
 from sqlalchemy import Column, DateTime, Integer, String
 
-from setup.database import Base
+from setup.database_setup import Base
 
 
 class AuditLog(Base):

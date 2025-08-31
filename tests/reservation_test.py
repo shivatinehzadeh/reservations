@@ -1,7 +1,7 @@
 from unittest.mock import MagicMock
 
 from setup.base import app
-from setup.database import get_db
+from setup.database_setup import get_db
 
 mock_db = MagicMock()
 

@@ -3,8 +3,8 @@ import time
 from kafka.errors import NoBrokersAvailable
 
 from app.audit_service import audit_service
-from setup.database import session_local
-from setup.logger import get_logger
+from setup.database_setup import session_local
+from setup.logger_setup import get_logger
 
 audit_runner_logger = get_logger("audit_service_runner", "audit_service_runner.log")
 

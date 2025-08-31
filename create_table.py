@@ -1,6 +1,6 @@
 # from models import AuditLog, Guests, Reservations
-from setup.database import Base, engine
-from setup.logger import get_logger
+from setup.database_setup import Base, engine
+from setup.logger_setup import get_logger
 
 logger = get_logger("create_table", "create_table.log")
 
