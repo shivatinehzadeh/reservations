@@ -2,7 +2,7 @@ from fastapi import HTTPException
 
 from models import AuditLog
 from setup.kafka_setup import get_kafka_consumer
-from setup.logger import get_logger
+from setup.logger_setup import get_logger
 
 audit_logger = get_logger("audit_log", "audit_log.log")
 

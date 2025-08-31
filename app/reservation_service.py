@@ -7,9 +7,9 @@ from sqlalchemy.orm import Session
 from starlette.responses import JSONResponse
 
 from models import Guests, ReservationCreate, Reservations
-from setup.database import get_db
+from setup.database_setup import get_db
 from setup.kafka_setup import get_kafka_producer
-from setup.logger import get_logger
+from setup.logger_setup import get_logger
 
 router = APIRouter()
 

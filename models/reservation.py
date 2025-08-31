@@ -5,7 +5,7 @@ from pydantic import BaseModel, StringConstraints
 from sqlalchemy import Column, DateTime, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
 
-from setup.database import Base
+from setup.database_setup import Base
 
 from .guest import GuestCreate, GuestRead
 
