@@ -1,6 +1,5 @@
 # reservations
 
-
 This project is a reservation management system built with FastAPI, SQLAlchemy, and PostgreSQL. It allows users to create reservations and guest information, and log events to Kafka for auditing purposes.
 
 Key features include:

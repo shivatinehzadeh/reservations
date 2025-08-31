@@ -21,6 +21,8 @@ def get_kafka_consumer():
         "reservations",
         bootstrap_servers=kafka_bootstrap,
         auto_offset_reset="earliest",
+        group_id="audit_service_group", 
+        enable_auto_commit=True, 
         value_deserializer=lambda v: json.loads(v.decode("utf-8")),
     )
     return kafka_consumer
