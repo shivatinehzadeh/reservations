@@ -1,8 +1,10 @@
-from sqlalchemy import Column, String, Integer, DateTime, ForeignKey, JSON
-from sqlalchemy.orm import relationship
-from database import Base
-from pydantic import BaseModel
 from datetime import datetime
+from typing import Annotated
+
+from pydantic import BaseModel, StringConstraints
+from sqlalchemy import Column, DateTime, Integer, String
+
+from setup.database import Base
 
 
 class AuditLog(Base):
@@ -10,20 +12,20 @@ class AuditLog(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     event_type = Column(String, nullable=False)
-    reservation_id = Column(Integer, ForeignKey("reservations.reservation_id"))
-    created_at = Column(DateTime,nullable=False)
-    status = Column(String, nullable=False)
-    reservation = relationship("Reservations", back_populates="audit")
-    
+    reservation_id = Column(String, nullable=False)
+    created_at = Column(DateTime, nullable=False)
+
+
+NonEmptyStr = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1)]
+
+
 class AuditLogCreate(BaseModel):
-    event_type: str
+    event_type: NonEmptyStr
     reservation_id: int
     created_at: datetime
-    status: str
+
 
 class AuditLogRead(AuditLogCreate):
     id: int
 
-    model_config = {
-        "from_attributes": True
-    }
+    model_config = {"from_attributes": True}

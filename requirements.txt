@@ -1,6 +1,10 @@
 FastAPI
-uvicorn
+uvicorn[standard]
 SQLAlchemy
 pydantic
 email-validator
 alembic
+psycopg2-binary
+kafka-python
+pytest 
+httpx
