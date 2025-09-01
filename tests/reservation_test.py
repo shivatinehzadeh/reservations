@@ -46,7 +46,7 @@ def test_create_reservation_start_and_end_time_failed(client):
     assert response.status_code == 400
 
     data = response.json()
-    assert data["message"] == "start_time must be before end_time."
+    assert data["message"] == "start_time must be earlier than end_time."
 
 
 def test_create_reservation_start_time_failed(client):

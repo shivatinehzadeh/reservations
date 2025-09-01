@@ -35,7 +35,7 @@ def create_reservation(reservation: ReservationCreate, db: Session = Depends(get
         if reservation_dict.get("start_time") > reservation_dict.get("end_time"):
             return JSONResponse(
                 status_code=400,
-                content={"message": "start_time must be before end_time."},
+                content={"message": "start_time must be earlier than end_time."},
             )
 
         # check if guest already exists/if not create new guest
